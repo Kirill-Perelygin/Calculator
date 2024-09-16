@@ -4,16 +4,19 @@ public class Calculator {
 
     static double firstNumber, secondNumber;
 
-    public static double addition(){
+    public static double addition() {
         return firstNumber + secondNumber;
     }
-    public static double substraction(){
+
+    public static double substraction() {
         return firstNumber - secondNumber;
     }
-    public static double division(){
+
+    public static double division() {
         return firstNumber / secondNumber;
     }
-    public static double multiplication(){
+
+    public static double multiplication() {
         return firstNumber * secondNumber;
     }
 
@@ -25,6 +28,11 @@ public class Calculator {
         char operationSign = scanner.next().charAt(0);
         System.out.println("Введите второе число: ");
         secondNumber = scanner.nextDouble();
+
+        if (operationSign == '/' && secondNumber == 0) {
+            System.out.println("Делить на ноль нельзя!");
+            System.exit(0);
+        }
 
         switch (operationSign) {
             case '+':
